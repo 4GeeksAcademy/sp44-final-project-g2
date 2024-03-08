@@ -11,13 +11,42 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+from flask_jwt_extended import JWTManager
+import cloudinary
+import cloudinary.uploader
+from flask_cors import CORS
 
+
+
+app = Flask(__name__)
+cors = CORS(app)
 #from models import Person
 
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
 app.url_map.strict_slashes = False
+app.config['CLOUD_NAME']= os.getenv("CLOUD_NAME")
+app.config['CLOUD_API_SECRET']= os.getenv("CLOUD_API_SECRET")
+app.config['CLOUD_KEY']= os.getenv("CLOUD_KEY")
+
+
+cloudinary.config( 
+  cloud_name = app.config['CLOUD_NAME'], 
+  api_key = app.config['CLOUD_KEY'], 
+  api_secret = app.config['CLOUD_API_SECRET'],
+  secure = True
+)
+
+
+app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET')
+jwt = JWTManager(app)
+
+#Probando token api
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+
+API_KEY=os.environ.get('API_KEY') 
+API_SECRET=os.environ.get('API_SECRET') 
 
 # database condiguration
 db_url = os.getenv("DATABASE_URL")

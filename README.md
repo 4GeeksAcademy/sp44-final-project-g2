@@ -1,81 +1,77 @@
-# WebApp boilerplate with React JS and Flask API
+# NEW HOME, QUE CADA MASCOTA TENGA SU HOGAR
 
-Build web applications using React.js for the front end and python/flask for your backend API.
 
-- Documentation can be found here: https://start.4geeksacademy.com/starters/react-flask
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to heroku [in just a few steps here](https://start.4geeksacademy.com/backend/deploy-heroku-posgres).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
+![Home](https://github.com/RomiTorres/New_Home_Project/assets/110548507/1c27111a-6209-4a59-be45-4b964a7dc31b)
 
-### 1) Installation:
+New Home es una plataforma creada para que cada perro encuentre un hogar. Esto puede ser desde la publicación de cada perro, o contactando con una protectora. <br>
+Además, si eres amante de los perros, pero no puedes adoptar, tienes la posibilidad de inscribirte como voluntario de una protectora.
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
+## Características y roles
 
-It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
+### Se puede acceder mediante 3 roles diferentes 
+- **Rol Visitante**, como visitante podrás acceder en primer lugar al **Home**, donde se encuentran dos accesos rápidos para visualizar las mascotas en adopción o las protectoras. <br>
+  1- En la pestaña **Adopt me** podrás visualizar las mascotas en adopción con su descripción, se puede filtrar por edad, tamaño o género. <br>
+  2- En **Animal Shelter** se encuentra un listado de protectoras, con sus contactos. Se puede filtrar por estado o ciudad. <br>
+  3- En **Lost Animal** podrás ver los animales que han sido reportados por usuarios como perdidos o como que han sido encontrados. <br>
+  4- En **Experiences** podrás visualizar posteos realizados por usuarios, contando su experiencia ya sea con la adopción o con la mascota. <br>
+  5- En **Tips** verás consejos para que la llegada del perro a casa sea una buena experiencia para todos. <br>
+  
+   https://github.com/RomiTorres/New_Home_Project/assets/110548507/1e864151-5f7a-41d7-be7f-3b215b8812c3
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+  
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+- **Rol Usuario** , en primer lugar deben registrarse, y luego hacer login. Desde aquí podran modificar su perfil.
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
 
-### Undo a migration
 
-You are also able to undo a migration by running
+     https://github.com/RomiTorres/New_Home_Project/assets/110548507/846f1f88-7d09-4ddc-9757-3971186f261f
 
-```sh
-$ pipenv run downgrade
-```
 
-### Backend Populate Table Users
+-    Luego de loguearse, además de visualizar en **Adopt me** las mascotas en adopción, tendrá los siguientes privilegios: <br>
+   1- En la pestaña **My aminal** podrá subir una mascota perdida o encontrada, que luego será vista en **Lost animal** por cualquier visitante.<br>
+   2- También puede subir una mascota perdida o encontrada desde la pestaña **Lost animal**.<br>
+   3- En **Voluntary form**, tendrá la posibilidad de postularse como voluntario para que una protectora contacte con usted. <br>
+   
 
-To insert test users in the database execute the following command:
 
-```sh
-$ flask insert-test-users 5
-```
+   
 
-And you will see the following message:
 
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
-```
+     https://github.com/RomiTorres/New_Home_Project/assets/110548507/319496fb-a818-4ec4-ba71-03c3589508f9
 
-### **Important note for the database and the data inside it**
 
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
 
-### Front-End Manual Installation:
+  
 
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
+- **Rol Protectora**, si ingresa como protectora tendrá los siguientes privilegios:<br>
+  1- En la pestaña **My animal** podrá subir animales perdidos, encontrados y en condición de adopción.<br>
+  2- Tendrá acceso al listado de voluntarios, filtrarlos por ciudad o por la disponibilidad horaria.
 
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
 
-## Publish your website!
 
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
+    https://github.com/RomiTorres/New_Home_Project/assets/110548507/1b37e0c5-7fbc-4e5b-8df6-c402a30c4902
 
-### Contributors
+### Administrador
+- Existe el rol **Administrador** donde se puede visualizar la totalidad de usuarios independientemente del rol
 
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+## Responsive
 
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+Ésta página web ha sido diseñada tato para ordenadores, como para teblet y móviles 
+
+
+![responsive1](https://github.com/RomiTorres/New_Home_Project/assets/110548507/a2245e40-c1c2-4b65-8dc3-4c39f4a15908)
+
+
+## Tecnologías
+
+- Frontend <br>
+  > React.js, JavaScritp, HTML, CSS, Bootstrap
+
+- Backend
+  > Python, Flask, Flask SQLAlchemy, PostgresSQL
+
+- APIs
+  > Petfinder <br>
+  > Cloudinary
+  

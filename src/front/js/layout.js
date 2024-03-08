@@ -4,12 +4,29 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
+import { Tips } from "./pages/tips";
+
+import { Adoptme } from "./pages/Adoptme.jsx";
+import { Details } from "./pages/details";
+import { Detailsdb } from "./pages/Detailsdb.jsx";
+import { Animalshelter } from "./pages/Animalshelter.jsx";
+
+import { Login } from "./pages/login";
+import  Register   from "./pages/register";
+import { Profile } from "./pages/profile";
+import UploadAnimal from "./pages/uploadanimal";
+
+import { Lostanimals } from "./pages/lostanimals";
+import { VoluntaryForm } from "./pages/voluntaryform.js";
+import { Experiences } from "./pages/experiences";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Admin } from "./pages/admin";
+import { Policy } from "./pages/policy";
+
 
 //create your first component
 const Layout = () => {
@@ -26,9 +43,23 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
+                        <Route element={<Login />} path="/login" />
+                        <Route element={<Register />} path="/register" />
+                        <Route element={<Profile />} path="/profile" />
                         <Route element={<Single />} path="/single/:theid" />
-                        <Route element={<h1>Not found!</h1>} />
+                        <Route element={<Tips />} path="/tips" />
+                        <Route element={<Admin />} path="/users" />
+                        <Route element={<Policy />} path="/policy" />
+                        <Route element={<UploadAnimal />} path="/animals" />                        
+                        <Route element={<Lostanimals />} path="/lostanimals" />
+                        <Route element={<VoluntaryForm />} path="/voluntaryform" /> 
+                        <Route element={<Experiences />} path="/experiences" />   
+                        <Route element={<Single />} path="/single" />
+                        <Route element={<Adoptme />} path="/adoptme" />
+                        <Route element={<Details />} path="/animalapi" />
+                        <Route element={<Detailsdb />} path="/animal" />
+                        <Route element={<Animalshelter />} path="/animalshelter" />
+                       <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
                 </ScrollToTop>
